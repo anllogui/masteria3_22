@@ -1,16 +1,6 @@
 # Seminario MLOps
 
-## First Hands On
-
-### Install depencendies
-
-- Install conda: https://conda.io/docs/user-guide/install/index.html#
-- Install mamba: 
-```
-conda install mamba -n base -c conda-forge
-```
-
-## Get the Code
+## First Hands On - Get the code
 
 Fork the code from:
 ```
@@ -27,12 +17,13 @@ git clone https://github.com/anllogui/pythonCI.git
 ```
 git status # show files changed
 git diff # show file changes
-git add . # add file to 
-git status
-git commit
-git push
+git add . # add changes to the index
+git status # show files added in green
+git commit # commit changes to local repository
+git status # shows no changes
+git push # push changes to repository
 ```
-
+## Code organization 
 There are 3 main folders:
 - *training*: code and data needed for training
 - *exploitation*: code to deploy de model
@@ -42,14 +33,37 @@ We will start with the training folder:
 - model: notebook for training the model
 - tests: data testing
 
-## Configure environment
+## Second Hands On - Configure environment
+
+### Install depencendies
+
+- Install conda: https://conda.io/docs/user-guide/install/index.html#
+- Install mamba: 
+```
+conda install mamba -n base -c conda-forge
+```
 
 ### Create environment
+
 In the training folder type:
 ```
 mamba env create -f environment.yml
 conda activate ci_training
 ```
+
+## Third Hands On - Unit Tests
+
+* Test for invalid valid data:
+```
+pytest tests/tests_data.py --datafile="wrong_data"
+```
+
+* Test for valid data:
+```
+pytest tests/tests_data.py --datafile="SalaryData1"
+```
+
+## Fourth Hands On - MLFlow
 
 ### Train the Model
 
@@ -61,6 +75,7 @@ jupyter notebook
 - Go to "nb/simple_regression.ipynb".
 - Execute Notebook
 
+#### Mlflow Local 
 Review results:
 - Exexute MLFlow ui:
 ```
@@ -69,7 +84,7 @@ mlflow ui
 ```
 - go to: http://127.0.0.1:5000
 
-## Second Hands On
+## X Hands On
 
 ### Expose the model
 

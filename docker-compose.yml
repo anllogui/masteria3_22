@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+  mlflow_server:
+    restart: always
+    build: mlflow_server
+    image: mlflow_server
+    container_name: mlflow_server
+    ports:
+      - "5000:5000"
+    command: mlflow server -h 0.0.0.0
+  training:
+    restart: always
+    build: training
+    image: training
+    container_name: training
+  training-dev:
+    restart: always
+    build: training
+    image: training-dev
+    volumes:
+      - .:/app
+    command: jupyter notebook
+    container_name: training-dev
+    ports:
+      - 8080:8080
+networks:
+  default:
+    external: true
+    name: training-net

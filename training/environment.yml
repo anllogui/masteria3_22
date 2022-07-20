@@ -1,0 +1,22 @@
+name: ci_training
+channels:
+  - conda-forge 
+  - defaults
+dependencies:
+  - numpy
+  - pandas
+  - python-dateutil
+  - pytz
+  - scikit-learn
+  - scipy
+  - six
+  - pytest
+  - jupyter
+  - matplotlib
+  - papermill
+  - joblib
+  - seaborn
+  - pip
+  - pip:
+    - mlflow
+    

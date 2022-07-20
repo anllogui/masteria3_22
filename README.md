@@ -14,13 +14,25 @@ conda install mamba -n base -c conda-forge
 
 Fork the code from:
 ```
-https://github.com/anllogui/pythonCI
+https://github.com/anllogui/masteria3_22
 ```
 
-Get the code:
+* Get the code:
 ```
 git clone https://github.com/anllogui/pythonCI.git
 ```
+
+* Modify Readme.md
+* Execute following commands:
+```
+git status # show files changed
+git diff # show file changes
+git add . # add file to 
+git status
+git commit
+git push
+```
+
 There are 3 main folders:
 - *training*: code and data needed for training
 - *exploitation*: code to deploy de model
@@ -36,7 +48,7 @@ We will start with the training folder:
 In the training folder type:
 ```
 mamba env create -f environment.yml
-mamba activate ci_training
+conda activate ci_training
 ```
 
 ### Train the Model

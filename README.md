@@ -156,7 +156,7 @@ sudo chmod 777 -R /opt/anaconda3
 #!/bin/bash
 echo "---- SETING ENVS ---- "
 
-export PATH=$PATH:/opt/anaconda3/
+export PATH=$PATH:/Users/anllogui/miniconda3/bin
 PYENV_HOME=$WORKSPACE/venv/
 export MLFLOW_TRACKING_URI="http://127.0.0.1:5000"
 
@@ -187,18 +187,18 @@ if [ -d $PYENV_HOME ]; then
     echo "- Project exists: cleanning.."
     rm -Rf $PYENV_HOME 
 fi
-source /opt/anaconda3/etc/profile.d/conda.sh
+source /Users/anllogui/miniconda3/etc/profile.d/conda.sh
 echo "*** creating env ***"
 echo $PYENV_HOME
-conda env create -f environment.yml --prefix $PYENV_HOME
-conda activate $PYENV_HOME
+mamba env create -f environment.yml --prefix $PYENV_HOME
+conda activate ci_training
 cd nb
-papermill simple_regression.ipynb output.ipynb -p data_ver ${data_version} -p model_ver ${model_version}
+papermill Simple_Regression.ipynb output.ipynb -p data_ver ${data_version} -p model_ver ${model_version}
 
-ls -la ../../models
+#ls -la ../models
 
-#push to nexus. comment if not installed
-curl -v -u admin:admin -X POST 'http://localhost:8081/service/rest/v1/components?repository=maven-releases' -F "maven2.groupId=models" -F "maven2.artifactId=simple_regresion" -F "maven2.version=${data_version}.${model_version}" -F "maven2.asset1=../../models/linear_regression_model_v${model_version}.pkl" -F "maven2.asset1.extension=pkl"
+#curl -v -u admin:admin -X POST 'http://localhost:8081/service/rest/v1/components?repository=maven-releases' -F "maven2.groupId=models" -F "maven2.artifactId=simple_regresion" -F "maven2.version=${data_version}.${model_version}" -F "maven2.asset1=../models/linear_regression_model_v${model_version}.pkl" -F "maven2.asset1.extension=pkl"
+
 ```
 
 #### Nexus

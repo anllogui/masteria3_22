@@ -9,7 +9,7 @@ https://github.com/anllogui/masteria3_22
 
 * Get the code:
 ```
-git clone https://github.com/anllogui/pythonCI.git
+git clone https://github.com/anllogui/masteria3_22.git
 ```
 
 * Modify Readme.md

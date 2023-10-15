@@ -38,16 +38,13 @@ We will start with the training folder:
 ### Install depencendies
 
 - Install conda: https://conda.io/docs/user-guide/install/index.html#
-- Install mamba: 
-```
-conda install mamba -n base -c conda-forge
-```
+
 
 ### Create environment
 
 In the training folder type:
 ```
-mamba env create -f environment.yml
+conda env create -f environment.yml
 conda activate ci_training
 ```
 
@@ -63,7 +60,7 @@ pytest tests/tests_data.py --datafile="wrong_data"
 pytest tests/tests_data.py --datafile="SalaryData1"
 ```
 
-## Fourth Hands On - MLFlow
+## Fourth Hands On - MLFlow
 
 ### Train the Model
 
@@ -84,19 +81,20 @@ mlflow ui
 ```
 - go to: http://127.0.0.1:5000
 
-## X Hands On
+## Fifth Hands On
 
 ### Expose the model
 
-The service is developed in "pythonCI/flaskr/linreg.py".
+The service is developed in "masteria3_22/flaskr/linreg.py".
 
 To run the service:
 
 Create environment:
+
 ```
 conda deactiate 
 conda env create -f environment.yml
-conda activate master_ciencia_datos_21_flask
+conda activate ci_exploitiation
 ```
 
 **Mac/Linux**:

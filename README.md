@@ -4,7 +4,7 @@
 
 Fork the code from:
 ```
-https://github.com/anllogui/masteria3_22
+https://github.com/anllogui/masteria3_22_asdf
 ```
 
 * Get the code:
@@ -12,8 +12,10 @@ https://github.com/anllogui/masteria3_22
 git clone https://github.com/anllogui/masteria3_22.git
 ```
 
+
 * Modify Readme.md
 * Execute following commands:
+
 ```
 git status # show files changed
 git diff # show file changes
@@ -23,13 +25,16 @@ git commit # commit changes to local repository
 git status # shows no changes
 git push # push changes to repository
 ```
+
 ## Code organization 
+
 There are 3 main folders:
 - *training*: code and data needed for training
 - *exploitation*: code to deploy de model
 - *mlflow_server*: folder to store mlflow data 
 
 We will start with the training folder:
+
 - model: notebook for training the model
 - tests: data testing
 
